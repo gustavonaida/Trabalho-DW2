@@ -1,7 +1,11 @@
-import './App.css'
+import "./App.css";
 
 function App() {
-  return 
+  return (
+    <>
+      <h1>Gerenciador de dispesas:</h1>
+    </>
+  );
 }
 
-export default App
+export default App;
