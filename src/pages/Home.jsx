@@ -1,8 +1,8 @@
-import "./Home.css";
+import "../css/Home.css";
 
 function Home() {
   return (
-    <div className="home-page">
+    <div id="home-page">
       <div className="colunas">
         <h1>Despesas Fixas:</h1>
         <div className="coluna-despesas-fixas"></div>

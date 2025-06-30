@@ -1,11 +1,16 @@
-import Home from "./pages/Home/Home";
+import Nav from "./pages/Nav";
+import Home from "./pages/Home";
+import Gerenciador from "./pages/Gerenciador";
 import "./App.css";
+import Graficos from "./pages/Graficos";
 
 function App() {
   return (
     <>
-      <h1>Gerenciador de Despesas</h1>
+      <Nav />
       <Home />
+      <Gerenciador />
+      <Graficos />
     </>
   );
 }
