@@ -1,0 +1,19 @@
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.colunas {
+  display: flex;
+  height: 100vh;
+  padding: ;
+}
+
+.grafico {
+  height: 40vw;
+  width: 40vw;
+  background-color: green;
+}
