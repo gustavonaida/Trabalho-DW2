@@ -5,11 +5,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito";
+}
+
+h1 {
+  font-family: "Poppins";
 }
 
 #gerenciador-page {
