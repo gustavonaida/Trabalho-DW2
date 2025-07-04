@@ -27,7 +27,7 @@
   background-color: #f5f5f5;
 }
 
-.colunas {
+.container-despesa-fixa {
   display: flex;
   height: 100%;
   width: 100%;
