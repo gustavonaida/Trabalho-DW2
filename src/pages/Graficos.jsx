@@ -1,4 +1,3 @@
-// src/pages/Graficos.jsx
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import "../css/Graficos.css";
@@ -15,8 +14,10 @@ const despesasVariaveis = [
   { name: "Transporte", value: 300 },
 ];
 
-const COLORS_FIXAS = ["#0088FE", "#00C49F", "#FFBB28"];
-const COLORS_VARIAVEIS = ["#FF8042", "#FF6384", "#36A2EB"];
+const generateColor = (index) => {
+  const hue = (index * 137.508) % 360; 
+  return `hsl(${hue}, 70%, 60%)`;
+};
 
 export default function Graficos() {
   return (
@@ -26,7 +27,7 @@ export default function Graficos() {
       <div className="grafico-duplo">
         <div>
           <h2>Despesas Fixas</h2>
-          <PieChart width={300} height={300}>
+          <PieChart width={550} height={300}>
             <Pie
               data={despesasFixas}
               cx="50%"
@@ -38,7 +39,7 @@ export default function Graficos() {
               dataKey="value"
             >
               {despesasFixas.map((entry, index) => (
-                <Cell key={index} fill={COLORS_FIXAS[index % COLORS_FIXAS.length]} />
+                <Cell key={index} fill={generateColor(index)} />
               ))}
             </Pie>
             <Tooltip formatter={(value) => `R$ ${value}`} />
@@ -48,7 +49,7 @@ export default function Graficos() {
 
         <div>
           <h2>Despesas Variáveis</h2>
-          <PieChart width={300} height={300}>
+          <PieChart width={550} height={300}>
             <Pie
               data={despesasVariaveis}
               cx="50%"
@@ -60,7 +61,7 @@ export default function Graficos() {
               dataKey="value"
             >
               {despesasVariaveis.map((entry, index) => (
-                <Cell key={index} fill={COLORS_VARIAVEIS[index % COLORS_VARIAVEIS.length]} />
+                <Cell key={index} fill={generateColor(index)} />
               ))}
             </Pie>
             <Tooltip formatter={(value) => `R$ ${value}`} />
@@ -71,4 +72,3 @@ export default function Graficos() {
     </div>
   );
 }
-
