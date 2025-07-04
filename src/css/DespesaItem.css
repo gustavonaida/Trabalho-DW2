@@ -1,9 +1,18 @@
-table {
-  background-color: #c9fbff;
+.despesa-item {
+  min-height: 4rem;
+  min-width: 12rem;
+  max-height: auto;
+  max-width: auto;
+  padding: 0.3rem;
+  display: flex;
+  background-color: white;
   border-radius: 10px;
-  padding: 0.5rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-td {
-  background-color: white;
+.despesa-item:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }

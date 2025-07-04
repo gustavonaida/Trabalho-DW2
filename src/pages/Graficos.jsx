@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import "../css/Graficos.css";
 
 const despesasFixas = [
-  { name: "Aluguel", value: 1200 },
+  { name: "Aluguel", value: 680 },
   { name: "Energia", value: 300 },
   { name: "Internet", value: 100 },
 ];
@@ -15,7 +15,7 @@ const despesasVariaveis = [
 ];
 
 const generateColor = (index) => {
-  const hue = (index * 137.508) % 360; 
+  const hue = (index * 137.508) % 360;
   return `hsl(${hue}, 70%, 60%)`;
 };
 

@@ -1,12 +1,13 @@
-import DespesaItem from "../components/DespesaFixa";
+import DespesaList from "../components/DespesaList";
 import "../css/Home.css";
 
-function Home() {
+function Home({ dados }) {
   return (
     <div id="home-page">
-      <div className="colunas">
-        <DespesaItem />
-      </div>
+      <h1>Despesas Fixas:</h1>
+      <DespesaList despesas={dados.despesaFixa} />
+      <h1>Despesas Variáveis:</h1>
+      <DespesaList despesas={dados.despesaVariavel} />
     </div>
   );
 }
