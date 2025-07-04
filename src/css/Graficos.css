@@ -1,15 +1,22 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+#graficos-page {
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-#graficos-page {
-  width: 100%;
-  height: 100vh;
-  padding-top: 3rem;
+.grafico-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: #fff6ea9a;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.grafico-duplo {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.grafico-duplo h2 {
+  margin-bottom: 10px;
 }
