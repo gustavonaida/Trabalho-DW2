@@ -10,7 +10,7 @@ const generateColor = (index) => {
   return `hsl(${hue}, 70%, 60%)`;
 };
 
-export default function Graficos(despesas) {
+export default function Graficos({despesas}) {
   return (
     <div id="graficos-page">
       <GraficoVariavel despesasVariaveis={despesas.despesaVariavel} />
