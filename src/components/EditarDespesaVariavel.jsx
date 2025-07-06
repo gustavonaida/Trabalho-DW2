@@ -1,8 +1,11 @@
-function EditarDespesaVariavel() {
+import "../css/EditarDespesa.css";
+
+function EditarDespesaVariavel({ despesa, index }) {
   return (
-    <>
-      <h1>Despesa Variável</h1>
-    </>
+    <div className="container-editar-despesa">
+      <h2>Nome</h2>
+      <input type="text" value={despesa.nome} />
+    </div>
   );
 }
 

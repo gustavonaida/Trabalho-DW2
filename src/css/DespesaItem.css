@@ -3,13 +3,13 @@
   min-width: 12rem;
   max-height: auto;
   padding: 0.3rem;
-  margin: 1rem;
+  margin: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
   transition: 0.3s;
   cursor: pointer;
 }
@@ -40,4 +40,5 @@
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
   cursor: pointer;
+  font-size: 2rem;
 }

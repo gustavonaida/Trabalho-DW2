@@ -14,7 +14,7 @@
 #gerenciador-page {
   width: 100vw;
   min-height: 100vh;
-  padding-top: 3rem;
+  padding: 4rem 3rem 3rem 3rem;
   display: flex;
   flex-direction: column;
   background-color: #f4f3ee;
