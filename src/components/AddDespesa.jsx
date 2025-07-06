@@ -1,14 +1,15 @@
 import { useState } from "react";
-import "../css/EditarDespesa.css";
 
-function EditarDespesaVariavel({ despesa, index }) {
-  const [nome, setNome] = useState(despesa.nome);
-  const [valor, setValor] = useState(despesa.valor);
-  const [data, setData] = useState(despesa.data);
-  const [descricao, setDescricao] = useState(despesa.descricao);
+function AddDespesa() {
+  const [nome, setNome] = useState("");
+  const [valor, setValor] = useState("");
+  const [data, setData] = useState("");
+  const [periodicidade, setPeriodicidade] = useState("");
+  const [descricao, setDescricao] = useState("");
+
   return (
     <div className="container-gerenciar-despesa">
-      <h1 id="titulo-gerenciar-despesa">Editar Despesa:</h1>
+      <h1 id="titulo-gerenciar-despesa">Adicionar Despesa:</h1>
       <div className="container-gerenciar-despesa-inputs">
         <div className="editar-despesa-input">
           <h2>Nome</h2>
@@ -26,7 +27,6 @@ function EditarDespesaVariavel({ despesa, index }) {
             onChange={(e) => setValor(e.target.value)}
           />
         </div>
-
         <div className="editar-despesa-input">
           <h2>Data</h2>
           <input
@@ -35,7 +35,19 @@ function EditarDespesaVariavel({ despesa, index }) {
             onChange={(e) => setData(e.target.value)}
           />
         </div>
-
+        <div className="editar-despesa-input">
+          <h2>Periodicidade</h2>
+          <select
+            value={periodicidade}
+            onChange={(e) => setPeriodicidade(e.target.value)}
+            name="periodicidade"
+            id="periodicidade-despesa"
+          >
+            <option value="semana">Semana</option>
+            <option value="mês">Mês</option>
+            <option value="ano">Ano</option>
+          </select>
+        </div>
         <div className="editar-despesa-input">
           <h2>Descrição</h2>
           <textarea
@@ -50,4 +62,4 @@ function EditarDespesaVariavel({ despesa, index }) {
   );
 }
 
-export default EditarDespesaVariavel;
+export default AddDespesa;

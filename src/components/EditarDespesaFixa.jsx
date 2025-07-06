@@ -6,40 +6,58 @@ function EditarDespesaFixa({ despesa, index }) {
   const [valor, setValor] = useState(despesa.valor);
   const [data, setData] = useState(despesa.data);
   const [periodicidade, setPeriodicidade] = useState(despesa.periodicidade);
+  const [descricao, setDescricao] = useState(despesa.descricao);
   return (
-    <div className="container-editar-despesa">
-      <h2>Nome</h2>
-      <input
-        type="text"
-        value={nome}
-        onChange={(e) => setNome(e.target.value)}
-      />
-
-      <h2>Valor</h2>
-      <input
-        type="number"
-        value={valor}
-        onChange={(e) => setValor(e.target.value)}
-      />
-
-      <h2>Data</h2>
-      <input
-        type="date"
-        value={data}
-        onChange={(e) => setData(e.target.value)}
-      />
-
-      <h2>Periodicidade</h2>
-      <select
-        value={periodicidade}
-        onChange={(e) => setPeriodicidade(e.target.value)}
-        name="periodicidade"
-        id="periodicidade-despesa"
-      >
-        <option value="semana">Semana</option>
-        <option value="mês">Mês</option>
-        <option value="ano">Ano</option>
-      </select>
+    <div className="container-gerenciar-despesa">
+      <h1 id="titulo-gerenciar-despesa">Editar Despesa:</h1>
+      <div className="container-gerenciar-despesa-inputs">
+        <div className="editar-despesa-input">
+          <h2>Nome</h2>
+          <input
+            type="text"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+        </div>
+        <div className="editar-despesa-input">
+          <h2>Valor</h2>
+          <input
+            type="number"
+            value={valor}
+            onChange={(e) => setValor(e.target.value)}
+          />
+        </div>
+        <div className="editar-despesa-input">
+          <h2>Data</h2>
+          <input
+            type="date"
+            value={data}
+            onChange={(e) => setData(e.target.value)}
+          />
+        </div>
+        <div className="editar-despesa-input">
+          <h2>Periodicidade</h2>
+          <select
+            value={periodicidade}
+            onChange={(e) => setPeriodicidade(e.target.value)}
+            name="periodicidade"
+            id="periodicidade-despesa"
+          >
+            <option value="semana">Semana</option>
+            <option value="mês">Mês</option>
+            <option value="ano">Ano</option>
+          </select>
+        </div>
+        <div className="editar-despesa-input">
+          <h2>Descrição</h2>
+          <textarea
+            name="descricao-despesa"
+            id="descricao-despesa"
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+          ></textarea>
+        </div>
+      </div>
     </div>
   );
 }

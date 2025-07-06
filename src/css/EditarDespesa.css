@@ -1,5 +1,28 @@
-.container-editar-despesa {
-  height: 100%;
+.container-gerenciar-despesa {
+  height: 70%;
+  width: 50%;
+  padding: 1.5rem;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.editar-despesa-input {
+  padding: 0.5rem;
+}
+
+#titulo-gerenciar-despesa {
+  padding-bottom: 1.3rem;
+  margin: 0;
+}
+
+.container-gerenciar-despesa-inputs {
   width: 100%;
-  padding-left: 3rem;
+  height: 70%;
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -1,5 +1,6 @@
-import DespesaItem from "./DespesaItem";
 import { Link } from "react-router-dom";
+import DespesaItem from "./DespesaItem";
+import ButtonAddDespesa from "../components/ButtonAddDespesa";
 
 function DespesaList({ despesas, tipoDespesa }) {
   return (
@@ -10,9 +11,9 @@ function DespesaList({ despesas, tipoDespesa }) {
             <DespesaItem id={index} dados={item} tipoDespesa={tipoDespesa} />
           </Link>
         ))}
-        <div className="despesa-item" id="adicionar-despesa">
-          +
-        </div>
+        <Link to={`/gerenciar`}>
+          <ButtonAddDespesa />
+        </Link>
       </div>
     </>
   );
