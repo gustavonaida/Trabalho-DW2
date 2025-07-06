@@ -14,14 +14,14 @@ function GraficoFixa({ despesasFixas }) {
   }
 
   const dadosConvertidos = despesasFixas.map((item) => ({
-    name: item.nome,     // nome da despesa vira 'name'
-    valor: item.valor,   // valor da despesa
+    name: item.nome,    
+    valor: item.valor,   
   }));
 
   return (
     <div>
       <h2>Despesas Fixas</h2>
-      <PieChart width={550} height={300}>
+      <PieChart width={550} height={360}>
         <Pie
           data={dadosConvertidos}
           cx="50%"
