@@ -57,6 +57,10 @@ function AddDespesa() {
             onChange={(e) => setDescricao(e.target.value)}
           ></textarea>
         </div>
+
+        <div className="editar-despesa-input">
+          <ConcluidoAdicionar />
+        </div>
       </div>
     </div>
   );
