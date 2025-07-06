@@ -37,7 +37,7 @@ function EditarDespesaFixa({ despesa, index }) {
         id="periodicidade-despesa"
       >
         <option value="semana">Semana</option>
-        <option value="mes">Mês</option>
+        <option value="mês">Mês</option>
         <option value="ano">Ano</option>
       </select>
     </div>
