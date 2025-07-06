@@ -87,7 +87,7 @@ function App() {
         <Route path="/gerenciar" element={<Gerenciador />}>
           <Route path=":id" element={<EditarDespesa despesas={data} />} />
         </Route>
-        <Route path="/graficos" element={<Graficos />} />
+        <Route path="/graficos" element={<Graficos despesas={data} />} />
       </Routes>
     </Router>
   );
