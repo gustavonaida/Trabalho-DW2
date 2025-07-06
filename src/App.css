@@ -24,3 +24,8 @@ h1 {
   font-family: "Poppins";
   font-weight: normal;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}

@@ -5,9 +5,9 @@ function Home({ dados }) {
   return (
     <div id="home-page">
       <h1>Despesas Fixas:</h1>
-      <DespesaList despesas={dados.despesaFixa} />
+      <DespesaList despesas={dados.despesaFixa} tipoDespesa="fixa" />
       <h1>Despesas Variáveis:</h1>
-      <DespesaList despesas={dados.despesaVariavel} />
+      <DespesaList despesas={dados.despesaVariavel} tipoDespesa="variavel" />
     </div>
   );
 }

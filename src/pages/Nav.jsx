@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <nav>
-      <Link to="/">
+      <Link className="link-nav" to="/">
         <img
           src={logo}
           alt="Gerenciamento de Despesas"
@@ -14,9 +14,15 @@ export default function Nav() {
         />
       </Link>
       <div className="pages">
-        <Link to="/">Início</Link>
-        <Link to="/gerenciar">Gerenciar</Link>
-        <Link to="/graficos">Graficos</Link>
+        <Link className="link-nav" to="/">
+          Início
+        </Link>
+        <Link className="link-nav" to="/gerenciar">
+          Gerenciar
+        </Link>
+        <Link className="link-nav" to="/graficos">
+          Graficos
+        </Link>
       </div>
     </nav>
   );

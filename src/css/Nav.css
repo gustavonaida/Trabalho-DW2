@@ -22,7 +22,7 @@ nav {
   top: 0;
 }
 
-a {
+.link-nav {
   text-decoration: none;
   color: black;
   padding: 1rem;
@@ -30,7 +30,7 @@ a {
   transition: 0.3s;
 }
 
-a:hover {
+.link-nav:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }

@@ -4,6 +4,7 @@ import Nav from "./pages/Nav";
 import Home from "./pages/Home";
 import Gerenciador from "./pages/Gerenciador";
 import Graficos from "./pages/Graficos";
+import EditarDespesa from "./pages/EditarDespesa";
 import { useState } from "react";
 
 function App() {
@@ -73,7 +74,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home dados={data} />} />
-        <Route path="/gerenciar" element={<Gerenciador />} />
+        <Route path="/gerenciar" element={<Gerenciador />}>
+          <Route path=":id" element={<EditarDespesa despesas={data} />} />
+        </Route>
         <Route path="/graficos" element={<Graficos />} />
       </Routes>
     </Router>
