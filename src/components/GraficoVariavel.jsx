@@ -20,7 +20,7 @@ function GraficoVariavel({ despesasVariaveis }) {
   return (
     <div>
       <h2>Despesas Variáveis</h2>
-      <PieChart width={550} height={360}>
+      <PieChart width={600} height={360}>
         <Pie
           data={dadosConvertidos}
           cx="50%"
