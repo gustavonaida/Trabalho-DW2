@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import DespesaItem from "./DespesaItem";
 import ButtonAddDespesa from "../components/ButtonAddDespesa";
+import { useState } from "react";
+import AddDespesa from "./AddDespesa";
 
 function DespesaList({ despesas, tipoDespesa }) {
+  const [mostrarAdicionarDespesa, setMostrarAdicionarDespesa] = useState(false);
   return (
     <>
       <div className="container-despesas">
@@ -11,9 +14,8 @@ function DespesaList({ despesas, tipoDespesa }) {
             <DespesaItem id={index} dados={item} tipoDespesa={tipoDespesa} />
           </Link>
         ))}
-        <Link to={`/gerenciar`}>
-          <ButtonAddDespesa />
-        </Link>
+        <ButtonAddDespesa onClick={() => setMostrarAdicionarDespesa(true)} />
+        {mostrarAdicionarDespesa ? <AddDespesa /> : <></>}
       </div>
     </>
   );

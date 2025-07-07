@@ -79,12 +79,23 @@ function App() {
       },
     ],
   });
+
+  function AdicionarDespesa(novaDespesa, tipoDespesa) {
+    setData((prevData) => ({
+      ...prevData,
+      [tipoDespesa]: [...prevData[tipoDespesa], novaDespesa],
+    }));
+  }
+
   return (
     <Router>
       <Nav />
       <Routes>
         <Route path="/" element={<Home dados={data} />} />
-        <Route path="/gerenciar" element={<Gerenciador />}>
+        <Route
+          path="/gerenciar"
+          element={<Gerenciador funcao={AdicionarDespesa} />}
+        >
           <Route path=":id" element={<EditarDespesa despesas={data} />} />
         </Route>
         <Route path="/graficos" element={<Graficos despesas={data} />} />

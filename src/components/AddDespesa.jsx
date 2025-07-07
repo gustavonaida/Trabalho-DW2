@@ -1,6 +1,7 @@
 import { useState } from "react";
+import ConcluidoAdicionar from "./ConcluidoAdicionar";
 
-function AddDespesa() {
+function AddDespesa({ OnClick }) {
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
   const [data, setData] = useState("");
@@ -36,18 +37,42 @@ function AddDespesa() {
           />
         </div>
         <div className="editar-despesa-input">
-          <h2>Periodicidade</h2>
+          <h2>Tipo de Despesa</h2>
           <select
-            value={periodicidade}
-            onChange={(e) => setPeriodicidade(e.target.value)}
-            name="periodicidade"
-            id="periodicidade-despesa"
+            name="tipo-despesa"
+            id="tipo-despesa"
+            onChange={(e) =>
+              setPeriodicidade("") ||
+              setDescricao("") ||
+              setData("") ||
+              setNome("") ||
+              setValor("") ||
+              setPeriodicidade(e.target.value)
+            }
+            value={periodicidade ? "despesaFixa" : "despesaVariavel"}
           >
-            <option value="semana">Semana</option>
-            <option value="mês">Mês</option>
-            <option value="ano">Ano</option>
+            <option value="">Selecione</option>
+            <option value="mês">Despesa fixa</option>
+            <option value="">Despesa variável</option>
           </select>
         </div>
+
+        {periodicidade && (
+          <div className="editar-despesa-input">
+            <h2>Periodicidade</h2>
+            <select
+              value={periodicidade}
+              onChange={(e) => setPeriodicidade(e.target.value)}
+              name="periodicidade"
+              id="periodicidade-despesa"
+            >
+              <option value="semana">Semana</option>
+              <option value="mês">Mês</option>
+              <option value="ano">Ano</option>
+            </select>
+          </div>
+        )}
+
         <div className="editar-despesa-input">
           <h2>Descrição</h2>
           <textarea
@@ -59,7 +84,17 @@ function AddDespesa() {
         </div>
 
         <div className="editar-despesa-input">
-          <ConcluidoAdicionar />
+          <ConcluidoAdicionar
+            funcao={OnClick}
+            novaDespesa={{
+              nome,
+              valor,
+              data,
+              periodicidade,
+              descricao,
+            }}
+            tipoDespesa={periodicidade ? "despesaFixa" : "despesaVariavel"}
+          />
         </div>
       </div>
     </div>
