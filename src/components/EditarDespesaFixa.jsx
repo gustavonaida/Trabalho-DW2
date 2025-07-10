@@ -61,7 +61,8 @@ function EditarDespesaFixa({ despesa, index }) {
 
         <div className="despesa-input">
           <ButtonEditarDespesa
-            novaDespesa={{
+            index={index}
+            despesaEditada={{
               nome,
               valor,
               data,

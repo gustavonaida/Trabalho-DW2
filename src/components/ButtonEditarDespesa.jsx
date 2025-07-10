@@ -1,21 +1,22 @@
 import { useDespesas } from "./DespesasContexto";
 import { useNavigate } from "react-router-dom";
 
-function ButtonEditarDespesa({ index, novaDespesa, tipoDespesa }) {
+function ButtonEditarDespesa({ index, despesaEditada, tipoDespesa }) {
   const { data, setData } = useDespesas();
   const navigate = useNavigate();
 
   const handleClick = () => {
     setData((despesa) => {
       if (tipoDespesa === "despesaVariavel") {
-        return {
-          ...despesa,
-          despesaVariavel: [...despesa.despesaVariavel, novaDespesa],
-        };
+        const novaDespesa = [...despesa.despesaVariavel];
+        novaDespesa[index] = despesaEditada;
+        return { ...despesa, despesaVariavel: [...novaDespesa] };
       } else {
+        const novaDespesa = [...despesa.despesaFixa];
+        novaDespesa[index] = despesaEditada;
         return {
           ...despesa,
-          despesaFixa: [...despesa.despesaFixa, novaDespesa],
+          despesaFixa: [...novaDespesa],
         };
       }
     });
