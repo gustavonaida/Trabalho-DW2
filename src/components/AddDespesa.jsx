@@ -1,7 +1,8 @@
 import { useState } from "react";
 import ConcluidoAdicionar from "./ConcluidoAdicionar";
+import "../css/Gerenciador.css";
 
-function AddDespesa({ OnClick }) {
+function AddDespesa() {
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
   const [data, setData] = useState("");
@@ -10,9 +11,9 @@ function AddDespesa({ OnClick }) {
 
   return (
     <div className="container-gerenciar-despesa">
-      <h1 id="titulo-gerenciar-despesa">Adicionar Despesa:</h1>
+      <h1 id="titulo-adicionar-despesa">Adicionar Despesa:</h1>
       <div className="container-gerenciar-despesa-inputs">
-        <div className="editar-despesa-input">
+        <div className="despesa-input">
           <h2>Nome</h2>
           <input
             type="text"
@@ -20,7 +21,7 @@ function AddDespesa({ OnClick }) {
             onChange={(e) => setNome(e.target.value)}
           />
         </div>
-        <div className="editar-despesa-input">
+        <div className="despesa-input">
           <h2>Valor</h2>
           <input
             type="number"
@@ -28,7 +29,7 @@ function AddDespesa({ OnClick }) {
             onChange={(e) => setValor(e.target.value)}
           />
         </div>
-        <div className="editar-despesa-input">
+        <div className="despesa-input">
           <h2>Data</h2>
           <input
             type="date"
@@ -36,29 +37,22 @@ function AddDespesa({ OnClick }) {
             onChange={(e) => setData(e.target.value)}
           />
         </div>
-        <div className="editar-despesa-input">
+        <div className="despesa-input">
           <h2>Tipo de Despesa</h2>
           <select
             name="tipo-despesa"
             id="tipo-despesa"
-            onChange={(e) =>
-              setPeriodicidade("") ||
-              setDescricao("") ||
-              setData("") ||
-              setNome("") ||
-              setValor("") ||
-              setPeriodicidade(e.target.value)
-            }
-            value={periodicidade ? "despesaFixa" : "despesaVariavel"}
+            onChange={(e) => setPeriodicidade(e.target.value)}
+            value={periodicidade}
           >
             <option value="">Selecione</option>
-            <option value="mês">Despesa fixa</option>
-            <option value="">Despesa variável</option>
+            <option value="despesaFixa">Despesa fixa</option>
+            <option value="despesaVariavel">Despesa variável</option>
           </select>
         </div>
 
-        {periodicidade && (
-          <div className="editar-despesa-input">
+        {periodicidade === "despesaFixa" && (
+          <div className="despesa-input">
             <h2>Periodicidade</h2>
             <select
               value={periodicidade}
@@ -73,7 +67,7 @@ function AddDespesa({ OnClick }) {
           </div>
         )}
 
-        <div className="editar-despesa-input">
+        <div className="despesa-input">
           <h2>Descrição</h2>
           <textarea
             name="descricao-despesa"
@@ -83,17 +77,32 @@ function AddDespesa({ OnClick }) {
           ></textarea>
         </div>
 
-        <div className="editar-despesa-input">
+        <div className="despesa-input">
           <ConcluidoAdicionar
-            funcao={OnClick}
-            novaDespesa={{
-              nome,
-              valor,
-              data,
-              periodicidade,
-              descricao,
-            }}
+            novaDespesa={
+              periodicidade
+                ? {
+                    nome,
+                    valor,
+                    data,
+                    periodicidade,
+                    descricao,
+                  }
+                : {
+                    nome,
+                    valor,
+                    data,
+                    descricao,
+                  }
+            }
             tipoDespesa={periodicidade ? "despesaFixa" : "despesaVariavel"}
+            onClick={() => {
+              setData("");
+              setDescricao("");
+              setNome("");
+              setPeriodicidade("");
+              setValor("");
+            }}
           />
         </div>
       </div>

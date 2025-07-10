@@ -1,22 +1,25 @@
 import { useParams } from "react-router-dom";
+import { useDespesas } from "../components/DespesasContexto";
 import EditarDespesaFixa from "../components/EditarDespesaFixa";
 import EditarDespesaVariavel from "../components/EditarDespesaVariavel";
+import { useState } from "react";
 
-function EditarDespesa({ despesas }) {
+function EditarDespesa() {
+  const { data, setData } = useDespesas();
   const { id } = useParams();
   const posicao = Number(id.slice(-1));
 
   if (id.includes("despesa-fixa")) {
     return (
       <EditarDespesaFixa
-        despesa={despesas.despesaFixa[Number(posicao)]}
+        despesa={data.despesaFixa[Number(posicao)]}
         index={posicao}
       />
     );
   } else {
     return (
       <EditarDespesaVariavel
-        despesa={despesas.despesaVariavel[Number(posicao)]}
+        despesa={data.despesaVariavel[Number(posicao)]}
         index={posicao}
       />
     );

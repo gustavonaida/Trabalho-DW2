@@ -1,21 +1,21 @@
 import { useDespesas } from "./DespesasContexto";
 import { useNavigate } from "react-router-dom";
 
-function ConcluidoAdicionar({ novaDespesa, tipoDespesa }) {
+function ButtonEditarDespesa({ index, novaDespesa, tipoDespesa }) {
   const { data, setData } = useDespesas();
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setData((prev) => {
+    setData((despesa) => {
       if (tipoDespesa === "despesaVariavel") {
         return {
-          ...prev,
-          despesaVariavel: [...prev.despesaVariavel, novaDespesa],
+          ...despesa,
+          despesaVariavel: [...despesa.despesaVariavel, novaDespesa],
         };
       } else {
         return {
-          ...prev,
-          despesaFixa: [...prev.despesaFixa, novaDespesa],
+          ...despesa,
+          despesaFixa: [...despesa.despesaFixa, novaDespesa],
         };
       }
     });
@@ -24,9 +24,9 @@ function ConcluidoAdicionar({ novaDespesa, tipoDespesa }) {
 
   return (
     <button className="concluido-adicionar-btn" onClick={handleClick}>
-      Adicionar
+      Salvar
     </button>
   );
 }
 
-export default ConcluidoAdicionar;
+export default ButtonEditarDespesa;
