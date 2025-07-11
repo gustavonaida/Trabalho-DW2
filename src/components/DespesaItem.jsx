@@ -1,8 +1,15 @@
 import "../css/DespesaItem.css";
+// import DetalhesDespesas from "./DetalhesDespesas";
 
 export default function DespesaItem({ dados, id, tipoDespesa }) {
+  // const [despesaFocada, setDespesaFocada] = useState(null);
   return (
-    <div className="despesa-item-caixa" id={`despesa-${tipoDespesa}-${id}`}>
+    <div
+      className="despesa-item-caixa"
+      id={`despesa-${tipoDespesa}-${id}`}
+      // onMouseEnter={() => setDespesaFocada(dados)}
+      // onMouseLeave={() => setDespesaFocada(null)}
+    >
       <h3>{dados.nome}</h3>
       <div className="despesa-item-descricao">
         <div className="despesa-item-descricao-valor">
@@ -20,6 +27,8 @@ export default function DespesaItem({ dados, id, tipoDespesa }) {
           <p>{dados.categoria}</p>
         </div>
       </div>
+
+      {/* {despesaFocada && <DetalhesDespesas setDespesaSelecionada={dados} />} */}
     </div>
   );
 }
