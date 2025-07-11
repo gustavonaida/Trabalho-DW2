@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import DetalhesDespesas from "../components/DetalhesDespesas";
 import { useParams } from "react-router-dom";
 import { useDespesas } from "../components/DespesasContexto";
+import "../css/DetalhesDespesas.css";
 
 function Detalhes() {
   const { id } = useParams();
@@ -19,13 +20,13 @@ function Detalhes() {
   }, [data, despesaSelecionada]);
 
   return (
-    <>
+    <div className="detalhes-page">
       {despesa ? (
         <DetalhesDespesas despesa={despesa} />
       ) : (
         <p>Carregando detalhes...</p>
       )}
-    </>
+    </div>
   );
 }
 
