@@ -1,6 +1,7 @@
 import { useState } from "react";
-import DespesaList from "../components/DespesaList";
 import { useDespesas } from "../components/DespesasContexto";
+import DespesaList from "../components/DespesaList";
+import DespesaListCategoria from "../components/DespesaListCategoria";
 import "../css/Home.css";
 
 function Home() {
@@ -50,64 +51,49 @@ function Home() {
 
       <div className="categorias-fixas">
         <h1>Categorias:</h1>
-        {assinaturaF.length > 0 ? (
-          (console.log(assinaturaF),
-          (
-            <span>
-              <h2>Assinatura</h2>
-              <DespesaList despesas={assinaturaF} tipoDespesa="despesaFixa" />
-            </span>
-          ))
-        ) : (
-          <></>
+
+        {assinaturaF.length > 0 && (
+          <span>
+            <h2>Assinatura</h2>
+            <DespesaListCategoria
+              despesas={assinaturaF}
+              tipoDespesa="despesaFixa"
+            />
+          </span>
         )}
 
-        {alimentacaoF.length > 0 ? (
-          (console.log(alimentacaoF),
-          (
-            <span>
-              <h2>Alimentação</h2>
-              <DespesaList despesas={alimentacaoF} tipoDespesa="despesaFixa" />
-            </span>
-          ))
-        ) : (
-          <></>
+        {alimentacaoF.length > 0 && (
+          <span>
+            <h2>Alimentação</h2>
+            <DespesaListCategoria
+              despesas={alimentacaoF}
+              tipoDespesa="despesaFixa"
+            />
+          </span>
         )}
 
-        {lazerF.length > 0 ? (
-          (console.log(lazerF),
-          (
-            <span>
-              <h2>Lazer</h2>
-              <DespesaList despesas={lazerF} tipoDespesa="despesaFixa" />
-            </span>
-          ))
-        ) : (
-          <></>
+        {lazerF.length > 0 && (
+          <span>
+            <h2>Lazer</h2>
+            <DespesaListCategoria despesas={lazerF} tipoDespesa="despesaFixa" />
+          </span>
         )}
 
-        {moradiaF.length > 0 ? (
-          (console.log(moradiaF),
-          (
-            <span>
-              <h2>Moradia</h2>
-              <DespesaList despesas={moradiaF} tipoDespesa="despesaFixa" />
-            </span>
-          ))
-        ) : (
-          <></>
+        {moradiaF.length > 0 && (
+          <span>
+            <h2>Moradia</h2>
+            <DespesaListCategoria
+              despesas={moradiaF}
+              tipoDespesa="despesaFixa"
+            />
+          </span>
         )}
 
-        {saudeF.length > 0 ? (
-          (console.log(saudeF),
-          (
-            <span>
-              <h2>Saúde</h2>
-              <DespesaList despesas={saudeF} tipoDespesa="despesaFixa" />
-            </span>
-          ))
-        ) : (
-          <></>
+        {saudeF.length > 0 && (
+          <span>
+            <h2>Saúde</h2>
+            <DespesaListCategoria despesas={saudeF} tipoDespesa="despesaFixa" />
+          </span>
         )}
       </div>
 
@@ -124,70 +110,55 @@ function Home() {
 
       <div className="categorias-variaveis">
         <h1>Categorias:</h1>
-        {assinaturaV.length > 0 ? (
-          (console.log(assinaturaV),
-          (
-            <span>
-              <h2>Assinatura</h2>
-              <DespesaList
-                despesas={assinaturaV}
-                tipoDespesa="despesaVariaveis"
-              />
-            </span>
-          ))
-        ) : (
-          <></>
+
+        {assinaturaV.length > 0 && (
+          <span>
+            <h2>Assinatura</h2>
+            <DespesaListCategoria
+              despesas={assinaturaV}
+              tipoDespesa="despesaVariaveis"
+            />
+          </span>
         )}
 
-        {alimentacaoV.length > 0 ? (
-          (console.log(alimentacaoV),
-          (
-            <span>
-              <h2>Alimentação</h2>
-              <DespesaList
-                despesas={alimentacaoV}
-                tipoDespesa="despesaVariaveis"
-              />
-            </span>
-          ))
-        ) : (
-          <></>
+        {alimentacaoV.length > 0 && (
+          <span>
+            <h2>Alimentação</h2>
+            <DespesaListCategoria
+              despesas={alimentacaoV}
+              tipoDespesa="despesaVariaveis"
+            />
+          </span>
         )}
 
-        {lazerV.length > 0 ? (
-          (console.log(lazerV),
-          (
-            <span>
-              <h2>Lazer</h2>
-              <DespesaList despesas={lazerV} tipoDespesa="despesaVariaveis" />
-            </span>
-          ))
-        ) : (
-          <></>
+        {lazerV.length > 0 && (
+          <span>
+            <h2>Lazer</h2>
+            <DespesaListCategoria
+              despesas={lazerV}
+              tipoDespesa="despesaVariaveis"
+            />
+          </span>
         )}
 
-        {moradiaV.length > 0 ? (
-          (console.log(moradiaV),
-          (
-            <span>
-              <h2>Moradia</h2>
-              <DespesaList despesas={moradiaV} tipoDespesa="despesaVariaveis" />
-            </span>
-          ))
-        ) : (
-          <></>
+        {moradiaV.length > 0 && (
+          <span>
+            <h2>Moradia</h2>
+            <DespesaListCategoria
+              despesas={moradiaV}
+              tipoDespesa="despesaVariaveis"
+            />
+          </span>
         )}
 
-        {saudeV.length > 0 ? (
-          (console.log(saudeV),
-          (
-            <span>
-              <h2>Saúde</h2>
-              <DespesaList despesas={saudeV} tipoDespesa="despesaVariaveis" />
-            </span>
-          ))
-        ) : (
-          <></>
+        {saudeV.length > 0 && (
+          <span>
+            <h2>Saúde</h2>
+            <DespesaListCategoria
+              despesas={saudeV}
+              tipoDespesa="despesaVariaveis"
+            />
+          </span>
         )}
       </div>
     </div>

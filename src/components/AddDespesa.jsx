@@ -4,7 +4,7 @@ import "../css/Gerenciador.css";
 
 function AddDespesa() {
   const [nome, setNome] = useState("");
-  const [valor, setValor] = useState("");
+  const [valor, setValor] = useState(0);
   const [data, setData] = useState("");
   const [periodicidade, setPeriodicidade] = useState("");
   const [tipoDespesa, setTipoDespesa] = useState("");
@@ -27,8 +27,8 @@ function AddDespesa() {
           <h2>Valor</h2>
           <input
             type="number"
-            value={valor}
-            onChange={(e) => setValor(e.target.value)}
+            value={toString(valor)}
+            onChange={(e) => setValor(Number(e.target.value))}
           />
         </div>
         <div className="despesa-input">

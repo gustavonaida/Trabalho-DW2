@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../css/DetalhesDespesas.css";
 import { useDespesas } from "./DespesasContexto";
+import ConversorMoeda from "../services/ConversorMoeda";
 
 function DetalhesDespesas({ despesa }) {
   const { data, setData } = useDespesas();
@@ -14,6 +15,7 @@ function DetalhesDespesas({ despesa }) {
         <p>Categoria: {despesaSelecionada.categoria}</p>
         <p>Descrição: {despesaSelecionada.descricao}</p>
       </div>
+      <ConversorMoeda valorParaConverter={Number(despesaSelecionada.valor)} />
     </div>
   );
 }

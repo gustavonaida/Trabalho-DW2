@@ -25,8 +25,8 @@ function EditarDespesaVariavel({ despesa, index }) {
           <h2>Valor</h2>
           <input
             type="number"
-            value={valor}
-            onChange={(e) => setValor(e.target.value)}
+            value={toString(valor)}
+            onChange={(e) => setValor(Number(e.target.value))}
           />
         </div>
 

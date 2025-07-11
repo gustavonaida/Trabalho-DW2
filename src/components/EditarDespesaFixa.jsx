@@ -27,7 +27,7 @@ function EditarDespesaFixa({ despesa, index }) {
           <input
             type="number"
             value={valor}
-            onChange={(e) => setValor(e.target.value)}
+            onChange={(e) => setValor(Number(e.target.value))}
           />
         </div>
         <div className="despesa-input">
