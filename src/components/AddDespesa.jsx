@@ -1,52 +1,15 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import ConcluidoAdicionar from "./ConcluidoAdicionar";
 import "../css/Gerenciador.css";
-import { useDespesas } from "./DespesasContexto"; // ou "../components/DespesasContexto" se estiver em outro lugar
 
 function AddDespesa() {
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
+  const [data, setData] = useState("");
   const [periodicidade, setPeriodicidade] = useState("");
   const [tipoDespesa, setTipoDespesa] = useState("");
   const [descricao, setDescricao] = useState("");
   const [categoria, setCategoria] = useState("");
-
-  const { data, setData } = useDespesas(); // pegando o array atual de despesas
-
-  const limparCampos = () => {
-    setNome("");
-    setValor("");
-    setData("");
-    setPeriodicidade("");
-    setDescricao("");
-    setCategoria("");
-    setTipoDespesa("");
-  };
-
-  const posicao =
-    tipoDespesa === "despesaFixa"
-      ? data?.despesaFixa?.length ?? 0
-      : data?.despesaVariavel?.length ?? 0;
-
-  const novaDespesa =
-    tipoDespesa === "despesaFixa"
-      ? {
-          nome,
-          valor,
-          data,
-          periodicidade,
-          descricao,
-          categoria,
-          posicao,
-        }
-      : {
-          nome,
-          valor,
-          data,
-          descricao,
-          categoria,
-          posicao,
-        };
 
   return (
     <div className="container-gerenciar-despesa">
@@ -60,7 +23,6 @@ function AddDespesa() {
             onChange={(e) => setNome(e.target.value)}
           />
         </div>
-
         <div className="despesa-input">
           <h2>Valor</h2>
           <input
@@ -69,7 +31,6 @@ function AddDespesa() {
             onChange={(e) => setValor(e.target.value)}
           />
         </div>
-
         <div className="despesa-input">
           <h2>Data</h2>
           <input
@@ -78,12 +39,13 @@ function AddDespesa() {
             onChange={(e) => setData(e.target.value)}
           />
         </div>
-
         <div className="despesa-input">
           <h2>Tipo de Despesa</h2>
           <select
-            value={tipoDespesa}
+            name="tipo-despesa"
+            id="tipo-despesa"
             onChange={(e) => setTipoDespesa(e.target.value)}
+            value={tipoDespesa}
           >
             <option value="">Selecione</option>
             <option value="despesaFixa">Despesa fixa</option>
@@ -97,8 +59,9 @@ function AddDespesa() {
             <select
               value={periodicidade}
               onChange={(e) => setPeriodicidade(e.target.value)}
+              name="periodicidade"
+              id="periodicidade-despesa"
             >
-              <option value="">Selecione</option>
               <option value="semana">Semana</option>
               <option value="mês">Mês</option>
               <option value="ano">Ano</option>
@@ -109,18 +72,21 @@ function AddDespesa() {
         <div className="despesa-input">
           <h2>Descrição</h2>
           <textarea
+            name="descricao-despesa"
+            id="descricao-despesa"
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
-          />
+          ></textarea>
         </div>
 
         <div className="despesa-input">
           <h2>Categoria</h2>
           <select
+            name="categoria-despesa"
+            id="categoria-despesa"
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
           >
-            <option value="">Selecione</option>
             <option value="Assinatura">Assinatura</option>
             <option value="Alimentação">Alimentação</option>
             <option value="Lazer">Lazer</option>
@@ -131,9 +97,33 @@ function AddDespesa() {
 
         <div className="despesa-input">
           <ConcluidoAdicionar
-            novaDespesa={novaDespesa}
+            novaDespesa={
+              tipoDespesa
+                ? {
+                    nome,
+                    valor,
+                    data,
+                    periodicidade,
+                    descricao,
+                    categoria,
+                  }
+                : {
+                    nome,
+                    valor,
+                    data,
+                    descricao,
+                    categoria,
+                  }
+            }
             tipoDespesa={tipoDespesa}
-            onClick={limparCampos}
+            onClick={() => {
+              setData("");
+              setDescricao("");
+              setNome("");
+              setPeriodicidade("");
+              setValor("");
+              setCategoria("");
+            }}
           />
         </div>
       </div>
