@@ -27,7 +27,10 @@
 }
 
 .despesa-item-descricao {
+  padding-top: 1rem;
   display: flex;
+  max-width: 10rem;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -78,4 +81,10 @@
   .bi {
     fill: white;
   }
+}
+
+.despesa-item-descricao-categoria {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

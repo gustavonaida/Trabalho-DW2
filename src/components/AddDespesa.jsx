@@ -7,7 +7,9 @@ function AddDespesa() {
   const [valor, setValor] = useState("");
   const [data, setData] = useState("");
   const [periodicidade, setPeriodicidade] = useState("");
+  const [tipoDespesa, setTipoDespesa] = useState("");
   const [descricao, setDescricao] = useState("");
+  const [categoria, setCategoria] = useState("");
 
   return (
     <div className="container-gerenciar-despesa">
@@ -42,16 +44,16 @@ function AddDespesa() {
           <select
             name="tipo-despesa"
             id="tipo-despesa"
-            onChange={(e) => setPeriodicidade(e.target.value)}
-            value={periodicidade}
+            onChange={(e) => setTipoDespesa(e.target.value)}
+            value={tipoDespesa}
           >
             <option value="">Selecione</option>
             <option value="despesaFixa">Despesa fixa</option>
-            <option value="despesaVariavel">Despesa variável</option>
+            <option value="">Despesa variável</option>
           </select>
         </div>
 
-        {periodicidade === "despesaFixa" && (
+        {tipoDespesa === "despesaFixa" && (
           <div className="despesa-input">
             <h2>Periodicidade</h2>
             <select
@@ -78,21 +80,39 @@ function AddDespesa() {
         </div>
 
         <div className="despesa-input">
+          <h2>Categoria</h2>
+          <select
+            name="categoria-despesa"
+            id="categoria-despesa"
+            value={categoria}
+            onChange={(e) => setCategoria(e.target.value)}
+          >
+            <option value="Assinatura">Assinatura</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Moradia">Moradia</option>
+            <option value="Saúde">Saúde</option>
+          </select>
+        </div>
+
+        <div className="despesa-input">
           <ConcluidoAdicionar
             novaDespesa={
-              periodicidade
+              tipoDespesa
                 ? {
                     nome,
                     valor,
                     data,
                     periodicidade,
                     descricao,
+                    categoria,
                   }
                 : {
                     nome,
                     valor,
                     data,
                     descricao,
+                    categoria,
                   }
             }
             tipoDespesa={periodicidade ? "despesaFixa" : "despesaVariavel"}
@@ -102,6 +122,7 @@ function AddDespesa() {
               setNome("");
               setPeriodicidade("");
               setValor("");
+              setCategoria("");
             }}
           />
         </div>

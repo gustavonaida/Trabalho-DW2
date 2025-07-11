@@ -14,30 +14,35 @@ export function DespesasProvider({ children }) {
               valor: 6,
               data: "2025-06-25",
               descricao: "Refrigerante comprado no mercado",
+              categoria: "Alimentação",
             },
             {
               nome: "Lanche no Burger King",
               valor: 34.5,
               data: "2025-06-28",
               descricao: "Almoço no shopping",
+              categoria: "Alimentação",
             },
             {
               nome: "Uber para faculdade",
               valor: 12,
               data: "2025-06-27",
               descricao: "Transporte até a faculdade",
+              categoria: "Transporte",
             },
             {
               nome: "Ingresso de cinema",
               valor: 22,
               data: "2025-06-30",
               descricao: "Sessão de cinema à noite",
+              categoria: "Lazer",
             },
             {
               nome: "Pastel da feira",
               valor: 9,
               data: "2025-07-01",
               descricao: "Lanche de quarta-feira na feira",
+              categoria: "Alimentação",
             },
           ],
           despesaFixa: [
@@ -47,6 +52,7 @@ export function DespesasProvider({ children }) {
               data: "2025-01-10",
               periodicidade: "mês",
               descricao: "Assinatura mensal de música",
+              categoria: "Assinaturas",
             },
             {
               nome: "Internet Vivo Fibra",
@@ -54,6 +60,7 @@ export function DespesasProvider({ children }) {
               data: "2025-01-05",
               periodicidade: "mês",
               descricao: "Serviço de internet residencial",
+              categoria: "Moradia",
             },
             {
               nome: "Netflix",
@@ -61,6 +68,7 @@ export function DespesasProvider({ children }) {
               data: "2025-01-15",
               periodicidade: "mês",
               descricao: "Assinatura de streaming",
+              categoria: "Assinaturas",
             },
             {
               nome: "Aluguel",
@@ -68,6 +76,7 @@ export function DespesasProvider({ children }) {
               data: "2025-01-01",
               periodicidade: "mês",
               descricao: "Aluguel do apartamento",
+              categoria: "Moradia",
             },
             {
               nome: "Plano de saúde",
@@ -75,6 +84,7 @@ export function DespesasProvider({ children }) {
               data: "2025-01-12",
               periodicidade: "mês",
               descricao: "Mensalidade do convênio médico",
+              categoria: "Saúde",
             },
           ],
         };

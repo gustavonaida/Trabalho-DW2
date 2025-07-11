@@ -14,6 +14,11 @@ export default function DespesaItem({ dados, id, tipoDespesa }) {
           <h4>Data:</h4>
           <p>{dados.data}</p>
         </div>
+
+        <div className="despesa-item-descricao-categoria">
+          <h4>Categoria:</h4>
+          <p>{dados.categoria}</p>
+        </div>
       </div>
     </div>
   );

@@ -7,6 +7,8 @@ function EditarDespesaVariavel({ despesa, index }) {
   const [valor, setValor] = useState(despesa.valor);
   const [data, setData] = useState(despesa.data);
   const [descricao, setDescricao] = useState(despesa.descricao);
+  const [categoria, setCategoria] = useState("");
+
   return (
     <div className="container-gerenciar-despesa">
       <h1 id="titulo-gerenciar-despesa">Editar Despesa:</h1>
@@ -48,6 +50,22 @@ function EditarDespesaVariavel({ despesa, index }) {
         </div>
 
         <div className="despesa-input">
+          <h2>Categoria</h2>
+          <select
+            name="categoria-despesa"
+            id="categoria-despesa"
+            value={categoria}
+            onChange={(e) => setCategoria(e.target.value)}
+          >
+            <option value="Assinatura">Assinatura</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Moradia">Moradia</option>
+            <option value="Saúde">Saúde</option>
+          </select>
+        </div>
+
+        <div className="despesa-input">
           <ButtonEditarDespesa
             index={index}
             despesaEditada={{
@@ -55,6 +73,7 @@ function EditarDespesaVariavel({ despesa, index }) {
               valor,
               data,
               descricao,
+              categoria,
             }}
             tipoDespesa={"despesaVariavel"}
           />

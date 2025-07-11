@@ -6,7 +6,6 @@ import Gerenciador from "./pages/Gerenciador";
 import Graficos from "./pages/Graficos";
 import EditarDespesa from "./pages/EditarDespesa";
 import { DespesasProvider } from "./components/DespesasContexto";
-import { useState } from "react";
 
 function App() {
   return (
