@@ -8,7 +8,7 @@ function EditarDespesa() {
   const { id } = useParams();
   const posicao = Number(id.slice(-1));
 
-  if (id.includes("despesa-fixa")) {
+  if (id.includes("despesaFixa")) {
     return (
       <EditarDespesaFixa
         despesa={data.despesaFixa[Number(posicao)]}
