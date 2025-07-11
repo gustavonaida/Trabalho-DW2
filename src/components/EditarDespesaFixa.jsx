@@ -8,7 +8,7 @@ function EditarDespesaFixa({ despesa, index }) {
   const [data, setData] = useState(despesa.data);
   const [periodicidade, setPeriodicidade] = useState(despesa.periodicidade);
   const [descricao, setDescricao] = useState(despesa.descricao);
-  const [categoria, setCategoria] = useState("");
+  const [categoria, setCategoria] = useState(despesa.categoria);
 
   return (
     <div className="container-gerenciar-despesa">
@@ -82,7 +82,7 @@ function EditarDespesaFixa({ despesa, index }) {
             index={index}
             despesaEditada={{
               nome,
-              valor,
+              valor: Number(valor),
               data,
               periodicidade,
               descricao,

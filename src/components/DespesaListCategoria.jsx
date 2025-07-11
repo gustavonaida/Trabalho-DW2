@@ -6,7 +6,7 @@ function DespesaListCategoria({ despesas, tipoDespesa }) {
     <>
       <div className="container-despesas">
         {despesas.map((item, index) => (
-          <div key={index} className="despesa-item">
+          <div key={index} className="despesa-item-categoria">
             <DespesaItem id={index} dados={item} tipoDespesa={tipoDespesa} />
           </div>
         ))}

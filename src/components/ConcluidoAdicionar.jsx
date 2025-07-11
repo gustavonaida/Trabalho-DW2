@@ -7,7 +7,13 @@ function ConcluidoAdicionar({ novaDespesa, tipoDespesa }) {
 
   const camposValidos = () => {
     if (!novaDespesa) return false;
-    if (!novaDespesa.nome || !novaDespesa.valor || !novaDespesa.data)
+    if (
+      !novaDespesa.nome ||
+      !novaDespesa.valor ||
+      !novaDespesa.data ||
+      !novaDespesa.categoria ||
+      !tipoDespesa
+    )
       return false;
     return true;
   };
