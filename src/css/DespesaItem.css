@@ -29,7 +29,7 @@
 .despesa-item-descricao {
   padding-top: 1rem;
   display: flex;
-  max-width: 10rem;
+  max-width: 12rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +37,19 @@
 
 .despesa-item-descricao-valor {
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.despesa-item-descricao-data {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.despesa-item-descricao-categoria {
+  display: flex;
+  align-items: start;
   flex-direction: column;
 }
 
@@ -103,10 +115,4 @@
   .bi-info-circle {
     fill: white;
   }
-}
-
-.despesa-item-descricao-categoria {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
