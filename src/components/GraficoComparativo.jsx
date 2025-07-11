@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
 const GraficoComparativo = ({ despesasFixas, despesasVariaveis }) => {
   const totalFixas = despesasFixas.reduce((acc, item) => acc + item.valor, 0);
-  const totalVariaveis = despesasVariaveis.reduce((acc, item) => acc + item.valor, 0);
+  const totalVariaveis = despesasVariaveis.reduce((acc, item) => acc + Number(item.valor), 0);
 
   const data = [
     { name: "Fixas", value: totalFixas },

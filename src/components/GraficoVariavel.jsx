@@ -14,7 +14,7 @@ function GraficoVariavel({ despesasVariaveis }) {
 
   const dadosConvertidos = despesasVariaveis.map((item) => ({
     name: item.nome,
-    valor: item.valor,
+    valor: Number(item.valor),
   }));
 
   return (
