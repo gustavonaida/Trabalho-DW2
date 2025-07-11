@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ButtonEditarDespesa from "./ButtonEditarDespesa";
 import "../css/Gerenciador.css";
 
 function EditarDespesaVariavel({ despesa, index }) {

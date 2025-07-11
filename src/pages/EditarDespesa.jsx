@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useDespesas } from "../components/DespesasContexto";
 import EditarDespesaFixa from "../components/EditarDespesaFixa";
 import EditarDespesaVariavel from "../components/EditarDespesaVariavel";
-import { useState } from "react";
 
 function EditarDespesa() {
   const { data, setData } = useDespesas();
