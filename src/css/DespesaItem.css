@@ -81,7 +81,7 @@
   transition: 0.2s;
 }
 
-.btn-remover-despesa .bi-trash {
+.btn-remover-despesa .bi {
   transition: 0.2s;
   fill: rgb(185, 65, 65);
 }
@@ -90,29 +90,7 @@
   transform: scale(1.05);
   transition: 0.2s;
   background-color: rgb(185, 65, 65);
-  .bi-trash {
-    fill: white;
-  }
-}
-
-.detalhe-despesa {
-  height: 1.5rem;
-  width: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  border: solid 1px rgb(0, 0, 0);
-  background-color: white;
-  font-size: 0.8rem;
-  transition: 0.2s;
-}
-
-.detalhe-despesa:hover {
-  transform: scale(1.05);
-  transition: 0.2s;
-  background-color: rgb(0, 0, 0);
-  .bi-info-circle {
+  .bi {
     fill: white;
   }
 }

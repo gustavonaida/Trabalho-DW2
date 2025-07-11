@@ -6,8 +6,6 @@ import Gerenciador from "./pages/Gerenciador";
 import Graficos from "./pages/Graficos";
 import EditarDespesa from "./pages/EditarDespesa";
 import { DespesasProvider } from "./components/DespesasContexto";
-import Detalhes from "./pages/Detalhes";
-import DetalhesDespesas from "./components/DetalhesDespesas";
 
 function App() {
   return (
@@ -16,9 +14,6 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detalhes" element={<Detalhes />}>
-            <Route path=":id" element={<DetalhesDespesas />} />
-          </Route>
           <Route path="/gerenciar" element={<Gerenciador />}>
             <Route path=":id" element={<EditarDespesa />} />
           </Route>

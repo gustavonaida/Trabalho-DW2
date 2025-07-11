@@ -15,7 +15,6 @@ export function DespesasProvider({ children }) {
               data: "2025-06-25",
               descricao: "Refrigerante comprado no mercado",
               categoria: "Alimentação",
-              posicao: 0,
             },
             {
               nome: "Lanche no Burger King",
@@ -23,7 +22,6 @@ export function DespesasProvider({ children }) {
               data: "2025-06-28",
               descricao: "Almoço no shopping",
               categoria: "Alimentação",
-              posicao: 1,
             },
             {
               nome: "Uber para faculdade",
@@ -31,7 +29,6 @@ export function DespesasProvider({ children }) {
               data: "2025-06-27",
               descricao: "Transporte até a faculdade",
               categoria: "Transporte",
-              posicao: 2,
             },
             {
               nome: "Ingresso de cinema",
@@ -39,7 +36,6 @@ export function DespesasProvider({ children }) {
               data: "2025-06-30",
               descricao: "Sessão de cinema à noite",
               categoria: "Lazer",
-              posicao: 3,
             },
             {
               nome: "Pastel da feira",
@@ -47,7 +43,6 @@ export function DespesasProvider({ children }) {
               data: "2025-07-01",
               descricao: "Lanche de quarta-feira na feira",
               categoria: "Alimentação",
-              posicao: 4,
             },
           ],
           despesaFixa: [
@@ -58,7 +53,6 @@ export function DespesasProvider({ children }) {
               periodicidade: "mês",
               descricao: "Assinatura mensal de música",
               categoria: "Assinaturas",
-              posicao: 0,
             },
             {
               nome: "Internet Vivo Fibra",
@@ -67,7 +61,6 @@ export function DespesasProvider({ children }) {
               periodicidade: "mês",
               descricao: "Serviço de internet residencial",
               categoria: "Moradia",
-              posicao: 1,
             },
             {
               nome: "Netflix",
@@ -76,7 +69,6 @@ export function DespesasProvider({ children }) {
               periodicidade: "mês",
               descricao: "Assinatura de streaming",
               categoria: "Assinaturas",
-              posicao: 2,
             },
             {
               nome: "Aluguel",
@@ -85,7 +77,6 @@ export function DespesasProvider({ children }) {
               periodicidade: "mês",
               descricao: "Aluguel do apartamento",
               categoria: "Moradia",
-              posicao: 3,
             },
             {
               nome: "Plano de saúde",
@@ -94,7 +85,6 @@ export function DespesasProvider({ children }) {
               periodicidade: "mês",
               descricao: "Mensalidade do convênio médico",
               categoria: "Saúde",
-              posicao: 4,
             },
           ],
         };
