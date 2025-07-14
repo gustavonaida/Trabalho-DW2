@@ -28,7 +28,7 @@ function GraficoFixa({ despesasFixas }) {
           cy="50%"
           outerRadius={100}
           dataKey="valor"
-          label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
+          label={({ percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
         >
           {dadosConvertidos.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={generateColor(index)} />

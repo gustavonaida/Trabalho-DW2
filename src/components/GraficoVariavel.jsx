@@ -27,7 +27,7 @@ function GraficoVariavel({ despesasVariaveis }) {
           cy="50%"
           outerRadius={100}
           dataKey="valor"
-          label={({ name, percent }) =>
+          label={({ percent }) =>
             `${name} (${(percent * 100).toFixed(0)}%)`
           }
         >
