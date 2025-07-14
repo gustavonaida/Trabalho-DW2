@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useDespesas } from "../components/DespesasContexto";
 import DespesaList from "../components/DespesaList";
 import DespesaListCategoria from "../components/DespesaListCategoria";
+import ConversorMoeda from "../services/ConversorMoeda"; // ⬅️ Importado aqui
 import "../css/Home.css";
 
 function Home() {
-  const { data, setData } = useDespesas();
+  const { data } = useDespesas();
+  const [valor, setValor] = useState(""); // ⬅️ Estado para o conversor
 
   const [alimentacaoF, setAlimentacaoF] = useState(
     data.despesaFixa.filter((item) => item.categoria === "Alimentação")
@@ -160,6 +162,17 @@ function Home() {
             />
           </span>
         )}
+      </div>
+
+      {/* 🔽 Conversor de Moedas adicionado abaixo */}
+      <div className="conversor-container" style={{ marginTop: "3rem" }}>
+        <h1>Conversor de Moeda</h1>
+        <input
+          type="number"
+          placeholder="Digite um valor em BRL"
+          onChange={(e) => setValor(e.target.value)}
+        />
+        <ConversorMoeda valorParaConverter={valor} />
       </div>
     </div>
   );
