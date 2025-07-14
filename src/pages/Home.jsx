@@ -163,17 +163,6 @@ function Home() {
           </span>
         )}
       </div>
-
-      {/* 🔽 Conversor de Moedas adicionado abaixo */}
-      <div className="conversor-container" style={{ marginTop: "3rem" }}>
-        <h1>Conversor de Moeda</h1>
-        <input
-          type="number"
-          placeholder="Digite um valor em BRL"
-          onChange={(e) => setValor(e.target.value)}
-        />
-        <ConversorMoeda valorParaConverter={valor} />
-      </div>
     </div>
   );
 }
